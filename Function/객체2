@@ -1,0 +1,17 @@
+// 객체
+
+function makeObject(name, age){
+  return {
+    name: name, // name, age, 생략가능
+    age: age,
+    hobby : 'football'
+  }
+}
+
+const Mike = makeObject('Mike', 30);
+console.log(Mike);
+
+
+// 객체 in
+console.log("age" in Mike); // true
+console.log("birthday" in Mike); // false
