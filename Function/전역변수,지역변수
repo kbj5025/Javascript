@@ -1,0 +1,14 @@
+// 전역 변수와 지역 변수
+
+let msg = "welcome";
+console.log(msg)
+
+function sayHello(name){
+  let msg = "Hello"
+  console.log(msg + ' ' + name);
+}
+
+sayHello('Mike');
+console.log(msg);
+
+// 함수에 특화된 지역 변수를 사용 권장
