@@ -1,0 +1,31 @@
+// method : 객체 프로퍼티로 할당 된 함수
+
+// ** 화살표 함수는 일반 함수와는 달리 자신만의 this를 가지지 않음
+// 화살표 함수 내부에서 this를 사용하면, 그 this는 외부에서 값을 가져옴
+
+
+let boy = {
+  name : "Mike",
+  showName : function() {
+    console.log(this.name)
+  }
+};
+
+let man = boy;
+boy = null;
+
+man.showName();
+
+---------------------------------------
+
+// method 화살표 함수로 되도록 작성하지말자
+
+let boy = {
+  name : 'Mike',
+  sayThis: function(){
+    console.log(this);
+  }
+};
+
+boy.sayThis();
+
