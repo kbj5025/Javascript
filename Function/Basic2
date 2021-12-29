@@ -1,0 +1,9 @@
+function sayHello(name){
+  const msg = `Hello, ${name}`;
+  console.log(msg);
+}
+
+sayHello('Mike');
+sayHello('Tom');
+
+// 함수는 중복을 피하기 위해 사용
