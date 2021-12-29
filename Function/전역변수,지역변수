@@ -12,3 +12,15 @@ sayHello('Mike');
 console.log(msg);
 
 // 함수에 특화된 지역 변수를 사용 권장
+---------------------------------------------------------------------------
+
+
+// default value
+
+function sayHello(name = 'friend'){
+  let msg = `Hello, ${name}`
+  console.log(msg)
+}
+
+sayHello();
+sayHello('Jane');
