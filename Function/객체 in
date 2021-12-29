@@ -19,3 +19,16 @@ const Jane = {
 
 console.log(isAdult(Mike)) // true
 console.log(isAdult(Jane)) // false
+
+------------------------------------------------------------
+
+// 객체 for ... in
+
+const Mike = {
+  name : 'Mike',
+  age : 30
+};
+
+for(x in Mike){
+  console.log(Mike[x]) // "Mike" , 30
+}
