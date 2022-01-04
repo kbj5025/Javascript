@@ -1,0 +1,55 @@
+계산된 프로퍼티(computed property)
+
+let a = 'age';
+
+const user = {
+  name : "Mike",
+  age  : 30
+ }
+ 
+ age를 [a]로 대체 가능 = 변수 a에 할당된 값이 들어감
+ ---------------------------------------------------
+ 
+ Object.assign() : 객체 복제
+ Object.keys() : 키 배열 반환
+ Object.values() : 값 배열 반환
+ Object.entries() : 키/값 배열 반환
+ Object.fromEntries() : 키/ 값 배열을 객체로  
+ 
+ ---------------------------------------------------
+ 1. let n = "name";
+    let a = "age";
+
+  const user = {
+    [n] : "Mike",
+    [a] : 30,
+   };
+   console.log(user); // name:"Mike", age:30
+  ---------------------------------------------------
+  2. function makeObj(key, val) {
+      return {
+      [key] : val,
+     },
+   }
+   
+   const obj = makeObj("나이", 30);
+   console.log(obj); // 나이: 20
+  ---------------------------------------------------
+   3. const user {
+      name : "Mike",
+      age  : 30,
+     };
+     
+     const user2 = Object.assign({}, user);
+     user2.name = "Tom";
+     
+     console.log(user); // name : "Mike", age : 30
+     console.log(user2); // name : "Tom", age : 30
+  ---------------------------------------------------
+   4. let arr = {
+      ["mon", "월"],
+      ["tue", "화"],
+     };
+     
+     const result = Object.fromEntries(arr);
+     console.log(result); // {mon: "월", tue: "화"}
