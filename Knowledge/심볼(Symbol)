@@ -1,0 +1,33 @@
+Symbol
+
+1.유일한 식별자
+const a = Symbol(); // new를 붙이지 않는다!
+const b = Symbol();
+
+console.log(a) // Symbol()
+console.log(b) // Symbol()
+
+but a === b; // false
+    a == b; // false
+
+2. 유일성 보장
+const id = Symbbol('id'); 설명을 붙여주면 문제 생길때 디버깅하기 편함 
+-------------------------------------------------------------------
+
+Symbol.for() : 전역 심볼
+- 하나의 심볼만 보장받을 수 있음
+- 없으면 만들고, 있으면 가져오기 때문
+- Symbol 함수는 매번 다른 Symbol 값을 생성하지만,
+- Symbol.for 메소드는 하나를 생성한 뒤 키를 통해 같은 Symbol을 공유
+
+const id1 = Symbol.for('id');
+const id2 = Symbol.for('id');
+
+id1 === id2; // true
+
+이름을 얻고 싶다면 Symbol.keyFor(id1)// "id"
+
+전역 심볼이 아니면 keyFor을 사용할 수 없다 
+대신 
+const id = Symbol('id 입니다.');
+id.description; // "id 입니다."
