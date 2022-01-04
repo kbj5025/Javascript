@@ -1,0 +1,47 @@
+// 첫글자는 대문자로
+
+function User(name, age){
+    this.name = name;
+    this.age = age;
+    }
+ 
+ // new 연산자를 사용해서 호출
+ 
+ let user1 = new User('Mike', 30);
+ let user2 = new User('Jane', 22); 
+ let user3 = new User('Tom', 17); 
+ ---------------------------------------------
+ 
+ function User(name, age){
+    this.name = name;
+    this.age = age;
+    this.sayName = function(){
+        console.log(this.name);
+       }
+    }
+    let user5 = new User('Han', 40);
+    user5.sayName(); // 'Han'
+ ---------------------------------------------
+ 
+ // 생성자 함수 : 상품 객체를 생성해보자
+ 
+ function item(title, price) {
+     // this = {};  // 생략된 알고리즘
+  this.title = title;
+  this.price = price;
+  this.showPrice = function() {
+    console.log(`가격은 ${price}원 입니다.`);
+   };
+  
+     // return this; // 생략된 알고리즘
+   }
+   
+   const item1 = new Item("인형", 3000);
+   const item2 = Item("가방", 9000); // new를 없애면 undefined 이유는 return해주는게 없기때문에 udefined를 반환
+   const item3 = new Item("지갑", 6000);
+  
+   console.log(item1,item2,item3); // 객체 생성
+   
+   item3.showPrice(); // 가격은 9000원입니다
+  
+    
