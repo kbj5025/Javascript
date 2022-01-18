@@ -1,0 +1,49 @@
+toUpperCase()/ toLowerCase() : 대문자,소문자 변환
+-------------------------
+
+str.slice(n,m) : n은 시작점, m이 없으면 문자열 끝까지 양수면 그 숫자까지(포함하지않음)
+                 음수면 끝에서부터 셈
+let desc = "abcdefg";
+
+desc.slice(2) // "cdefg"
+desc.slice(0,5) // "abcde"
+desc.slice(2,-2) // "cdefg"
+-------------------------
+
+str.substring(n,m) : n과 m사이 문자열 반환, n과 m을 바꿔도 동작함, 음수는 0으로 인식
+
+let desc = "abcdefg";
+
+desc.substring(2,5); // "cde"
+desc.substring(5,2); // "cde"
+-------------------------
+
+str.substr(n,m) : n부터 시작해서 m개를 가져옴
+
+let desc = "abcdefg";
+
+desc.substring(2,4); // "cdef"
+desc.substring(-4,2); // "de"
+-------------------------
+
+str.repeat(n) : n번 반복
+
+let hello = "hello!";
+hello.repeat(3); // "hello!hello!hello!"
+-------------------------
+
+let list = [
+  "01. 들어가며",
+  "02. 어가며",
+  "03. 가며",
+  "04. 며",
+  
+];
+
+let newList = [];
+
+for(let i = 0; i < list.length; i++){
+  newList.push(list[i].slice(4));
+}
+
+console.log(newList); // "들어가며","어가며","가며","며"
